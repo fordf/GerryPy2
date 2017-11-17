@@ -2,7 +2,7 @@
   "name": "static",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://localhost:5000/static/build",
+  "homepage": "http://gerrypy.herokupp.com",
   "dependencies": {
     "google-map-react": "^0.25.0",
     "react": "^16.0.0",

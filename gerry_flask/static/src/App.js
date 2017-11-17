@@ -1,12 +1,12 @@
 import React from 'react';
 import GoogleMap from 'google-map-react';
-import openSocket from 'socket.io-client';
+import io from 'socket.io-client';
 
 import './App.css';
 
 import JumpButton from './components/JumpButton';
 
-var socket = openSocket('http://localhost:5000');
+var socket = io();
 
 function subscribeToGeoJson(cb1, cb2) {
   socket.on('tractjson', (geojson) => {

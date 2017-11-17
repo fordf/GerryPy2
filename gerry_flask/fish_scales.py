@@ -6,7 +6,7 @@ and update the database.
 
 import json
 import networkx as nx
-from .models import Tract, Edge, DistrictView
+from gerry_flask.models import Tract, Edge, DistrictView
 
 
 def fill_graph(dbsession):

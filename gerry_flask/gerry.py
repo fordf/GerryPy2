@@ -5,11 +5,14 @@ import os
 from flask import Flask, send_file, url_for, send_from_directory
 from flask_socketio import SocketIO, send, emit
 
-from .database import db_session
-from .fish_scales import State, full_JSON, make_feature, make_feature_collection
+from gerry_flask.database import db_session
+from gerry_flask.fish_scales import State, full_JSON, make_feature, make_feature_collection
 
-HERE = os.path.dirname(__file__)
-app = Flask(__name__, static_url_path=os.path.join(HERE, 'static/build'))
+HERE = os.path.abspath(os.path.dirname(__file__))
+STATIC = os.path.join(HERE, 'static/build')
+app = Flask(
+    __name__,
+)
 app.config['SECRET_KEY'] = os.environ['GP_SECRET_KEY']
 socketio = SocketIO(app)
 
@@ -49,13 +52,13 @@ def spew_geojson():
 
 @app.route("/")
 def client():
-    return send_file(url_for('static', filename='index.html'))
+    return send_file(STATIC + '/index.html')
 
 
 if __name__ == '__main__':
     socketio.run(
         app,
         host='0.0.0.0',
+        debug=True,
         port=int(os.environ.get('PORT', 5000)),
-        ssl_context='adhoc'
     )
