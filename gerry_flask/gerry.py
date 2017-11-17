@@ -1,14 +1,15 @@
 import eventlet
 eventlet.monkey_patch()
 # without this monkey patch the sockets wouldn't emit
-import asyncio
-from flask import Flask
+import os
+from flask import Flask, send_file, url_for, send_from_directory
 from flask_socketio import SocketIO, send, emit
 
 from .database import db_session
 from .fish_scales import State, full_JSON, make_feature, make_feature_collection
 
-app = Flask(__name__)
+HERE = os.path.dirname(__file__)
+app = Flask(__name__, static_url_path=os.path.join(HERE, 'static/build'))
 app.config['SECRET_KEY'] = os.environ['GP_SECRET_KEY']
 socketio = SocketIO(app)
 
@@ -46,5 +47,10 @@ def spew_geojson():
     spew(tract_generator)
 
 
+@app.route("/")
+def client():
+    return send_file(url_for('static', filename='index.html'))
+
+
 if __name__ == '__main__':
-    socketio.run(app, log_output=True)
+    socketio.run(app, log_output=False)

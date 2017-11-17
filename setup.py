@@ -42,5 +42,10 @@ setup(name='gerrypy2',
       # extras_require={
       #     'testing': tests_require,
       # },
+      entry_points={
+        'console_scripts': [
+            "initializedb = database:init_db",
+        ]
+      },
       install_requires=requires,
       )

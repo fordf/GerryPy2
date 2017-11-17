@@ -1,4 +1,6 @@
 #!/bin/bash
 set -e
 python setup.py develop
-python runapp.py
+initializedb
+cd gerry_flask
+FLASK_APP=gerry.py flask run
