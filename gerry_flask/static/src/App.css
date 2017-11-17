@@ -1,0 +1,140 @@
+.App {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #f2f4f4;
+  height: 5vh;
+  color: white;
+  border-bottom: solid 1px black;
+  display: block;
+}
+
+.App-title {
+  font-size: 1.5em;
+  display: block;
+  padding: 6px;
+  color: black;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #feeaea;
+}
+
+button:focus {
+  outline: none;
+}
+
+.Generate-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 5vh;
+  width: 8vw;
+  background-color: #fff;
+  border: none;
+}
+
+.Clear-button {
+  position: absolute;
+  left: 8vw;
+  top: 0;
+  height: 5vh;
+  width: 5vw;
+  border: none;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+.Full-button {
+  position: absolute;
+  left: 13vw;
+  top: 0;
+  height: 5vh;
+  width: 6vw;
+  background-color: #fff;
+  border: none;
+}
+
+.jump-div {
+  position: absolute;
+  top: 0;
+  height: 5vh;
+  width: 10vw;
+  background-color: #fff;
+}
+
+.jump-div:nth-of-type(1) {
+  right: 10vw;
+}
+
+.jump-div:nth-of-type(2) {
+  right: 0;
+}
+
+.jump-button {
+  width: 50%;
+  height: 100%;
+  border: none;
+  position: absolute;
+  display: inline-block;
+  background-color: #fff;
+}
+
+.jump-button:hover {
+  background-color: salmon;
+}
+
+.jump-div:nth-of-type(1) .jump-button {
+  right: 0;
+}
+
+.jump-div:nth-of-type(2) .jump-button {
+  left: 0;
+}
+
+.jump-input {
+  height: 90%;
+  border: none;
+  position: absolute;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.jump-div:nth-of-type(1) .jump-input {
+  padding-left: 12%;
+  width: 34%;
+  left: 0;
+}
+
+.jump-div:nth-of-type(2) .jump-input {
+  width: 40%;
+  right: 0;
+}
+
+.jump-input:focus{
+  outline: none;
+}
+
+.Map-container {
+  height: 95vh;
+  width: 100vw;
+  position: relative;
+}
+
+.Py {
+  font-weight: bold;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
