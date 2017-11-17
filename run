@@ -2,4 +2,4 @@
 set -e
 python setup.py develop
 cd gerry_flask
-FLASK_APP=gerry.py flask run
+FLASK_APP=gerry.py flask run -h 0.0.0.0
